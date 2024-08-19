@@ -19,7 +19,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/marcosnathan/mortgage-repayment-calculator)
-- Live Site URL: [GitHub Pages](https://https://marcosnathan.github.io/mortgage-repayment-calculator)
+- Live Site URL: [GitHub Pages](https://marcosnathan.github.io/mortgage-repayment-calculator)
 
 ## My process
 
