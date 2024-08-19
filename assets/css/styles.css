@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    /*  Colors */
+
+    /* Primary */
+    --lime--color: hsl(61, 70%, 52%);
+    --red--color: hsl(4, 69%, 50%);
+    --radio-bg: rgba(216, 219, 47, 0.15);
+    --results-bg: rgba(0, 0, 0, 0.25);
+    /* Neutral */
+
+    --white--color: hsl(0, 0%, 100%);
+    --slate--100--color: hsl(202, 86%, 94%);
+    --slate--300--color: hsl(203, 41%, 72%);
+    --slate--500--color: hsl(200, 26%, 54%);
+    --slate--700--color: hsl(200, 24%, 40%);
+    --slate--900--color: hsl(202, 55%, 16%);
+
+    /* Body Copy */
+
+    --font--size: 1rem; 
+    --font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background-color: var(--slate--700--color);
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-size: var(--font--size);
+    color: var(--slate--700--color);
+    background-color: var(--slate--100--color);
+}
+
+.results-container,
+.form__container {
+    padding: 1rem;
+}
+
+.form__container {
+    background-color: var(--white--color);
+}
+
+.form__title-bar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.title {
+    color: var(--slate--900--color);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.clear-all {
+   color: var(--slate--500--color); 
+   font-weight: 400;
+   font-size: small;
+   text-decoration: underline;
+   cursor: pointer;
+   margin-top: .5rem;
+}
+
+.form__row {
+    display: flex;
+    flex-direction: column;
+    margin: .7rem 0;
+}
+
+.form__field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-radio {
+    display: none;
+}
+
+.custom-radio {
+    width: 1.125rem;
+    height: 1.125rem;
+    border: .12rem solid var(--slate--700--color);
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.form-radio:checked + .custom-radio {
+    border-color: var(--lime--color);
+}
+
+.custom-radio::after {
+    content: "";
+    display: none; 
+    width: .625rem;
+    height: .625rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--lime--color);
+    transform: translate(-51%, -45%);
+}
+
+.form-radio:checked + .custom-radio::after {
+    display: block;
+}
+
+.rb-box:has(.form-radio:checked) {
+    background-color: var(--radio-bg);
+    border-color: var(--lime--color);
+}
+
+
+.form__field-radio {
+    border: transparent;
+    padding: .2rem 0 0 0;
+}
+
+.input-text {
+    width: 100%;
+    margin: .3rem 0;
+    padding: .7rem 1rem;
+    line-height: 1rem;
+    border: 1px var(--slate--500--color) solid;
+    border-radius: .3rem;
+    font-weight: bold;
+    color: var(--slate--900--color);
+}
+
+
+.input-text:focus {
+    outline: none;
+}
+
+.input-text:hover {
+    border-color: var(--slate--900--color);
+}
+
+.rb-box {
+    border: 1px solid var(--slate--500--color);
+    border-radius: .3rem;
+    padding: .7rem 1rem;
+    margin-top: .5rem;
+    width: 100%;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rb-box:hover {
+    border-color: var(--lime--color);
+    
+}
+
+.fix {
+    position: absolute;
+    padding: .7rem 1rem;
+    line-height: 125%;
+    font-weight: bold;
+    top: 38.2%;
+    border-radius: .3rem 0 0 .3rem;
+    background-color: var(--slate--100--color);
+}
+
+.prefix {
+    left: .5px;
+}
+.suffix {
+    right: .5px;
+    border-radius: 0 .3rem .3rem 0;
+    
+}
+
+.error-required {
+    color: var(--red--color);
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    transform: translateY(1.2rem);
+}
+
+.amount {
+    padding-inline-start: 3.75rem
+}
+
+.term {
+    padding-inline-end: 5rem;
+}
+
+.results-empty {
+    background-color: var(--slate--900--color);
+}
+
+.submit-button {
+    background: url('assets/images/icon-calculator.svg') no-repeat;
+    width: 100%;
+    height: 3rem;
+    border-radius: 2rem;
+    border-width: 0px;
+    background-color: var(--lime--color);
+    color: var(--slate--900--color);
+    font-weight: 700;
+    font-size: large;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .4rem;
+    padding-top: .2rem;
+}
+
+
+.results-container {
+    background-color: var(--slate--900--color);
+}
+
+.results-empty {
+    display: flex; /* flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.result-title {
+    color: var(--white--color);
+    margin-top: 0;
+}
+
+.result-info {
+    color: var(--slate--300--color);
+    font-weight: 500;
+}
+
+.info-empty {
+    text-align: center;
+
+}
+
+.show-result {
+    display: none; /* flex */
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    background-color: var(--slate--900--color);
+    padding: 1rem;
+    row-gap: 1.5rem;
+}
+
+.card-result{
+    border-top: .25rem solid var(--lime--color);
+    border-radius: .5rem ;
+    background-color: var(--results-bg);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.monthly-total {
+    font-weight: bold;
+    color: var(--lime--color);
+    line-height: 125%;
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.term-total {
+    margin-top: 0;
+    font-weight: bold;
+    color: var(--white--color);
+    font-size: x-large;
+}
+
+@media screen and (min-width: 600px) {
+    .main-content {
+        padding: 2rem;
+    }
+
+    .fix {
+        top: 38%;
+    }
+
+    .form__title-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form__row {
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .form__container {
+        padding: 2rem;
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .results-container {
+        border-radius: 0 0 2rem 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main-content {
+        padding: 3rem 6rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form__container {
+        padding: 2rem;
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .results-container {
+        background-color: var(--white--color);
+        border-radius: 0 1rem 1rem 0;
+        padding: 0;
+    }
+
+    .results-empty {
+        position: relative;
+        height: 100%;
+        border-radius: 1rem;
+        border-radius: 0 1rem 1rem 5rem;
+    }
+
+    .show-result {
+        position: relative;
+        height: 100%;
+        justify-content: flex-start;
+        
+        border-radius: 0 1rem 1rem 5rem;
+        padding: 2.5rem 2rem;
+
+    }
+
+    .submit-button {
+        width: 80%;
+        font-size: medium;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+<body>
+  <main>
+    <div class="main-content">
+      <form action="#" class="form__container">
+        <div class="form__title-bar">
+          <h2 class="title">Mortgage Calculator</h2>
+          <p class="clear-all" id="clear-all">Clear All</p>
+        </div>
+        
+        <div class="form__field">
+          <label class="form__field-label" for="mortgage-amount">Mortgage Amount</label>
+          <input class="input-text amount" type="text" name="mortgage-amount" id="mortgage-amount">
+          <span class="fix prefix">$</span>
+          <span class="error-required amount-required">This field is required</span>
+        </div>
+  
+        <div class="form__row">
+          <div class="form__field">
+            <label class="form__field-label" for="mortgage-term">Mortgage Term</label>
+            <input class="input-text term" type="number" name="mortgage-term" id="mortgage-term">
+            <span class="fix suffix">years</span>
+            <span class="error-required term-required">This field is required</span>
+          </div>
+          <div class="form__field">
+            <label class="form-label" for="interest-rate">Interest Rate</label>
+            <input class="input-text rate" type="number" name="interest-rate" id="interest-rate">
+            <span class="fix suffix">%</span>
+            <span class="error-required interest__rate-required">This field is required</span>
+          </div>
+        </div>
+  
+        <fieldset class="form__field form__field-radio">
+          <legend class="form-label">Mortgage Type</legend>
+          <label class="rb-box" for="rb-repayment">
+            <input class="form-radio" type="radio" name="mortgage-type" id="rb-repayment" value="repayment">
+            <span class="custom-radio"></span>
+            <span class="label-radio">Repayment</span>
+          </label>
+          <label class="rb-box" for="rb-interest-only">
+            <input class="form-radio" type="radio"  name="mortgage-type" id="rb-interest-only" value="interest-only">
+            <span class="custom-radio"></span>
+            <span class="label-radio">Interest Only</span>
+          </label>
+          <span class="error-required mortgage__type-required">This field is required</span>
+        </fieldset>
+  
+        <div class="form-field">
+          <button class="submit-button" type="submit" id="submit">
+            <i>
+              <img src="./assets/images/icon-calculator.svg" alt="">
+            </i>
+            Calculate Repayments
+          </button>
+        </div>
+      </form>
+      <div class="results-container">
+        <div class="results-empty">
+          <img src="assets/images/illustration-empty.svg" alt="" srcset="">
+          <h3 class="result-title">Results shown here</h3>
+          <p class="result-info info-empty">Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.</p>
+        </div>
+        <div class="show-result">
+          <h3 class="result-title">Your results</h3>
+          <p class="result-info">Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click “calculate repayments” again.</p>
+          <div class="card-result">
+            <p class="result-info">Your monthly repayments</p>
+            <p class="monthly-total" id="monthly-total">$1,797.74</p>
+            <hr>
+            <p class="result-info">Total you'll repay over the term</p>
+            <p class="term-total" id="term-total">$539,322.94</p>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
